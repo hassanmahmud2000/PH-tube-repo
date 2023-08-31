@@ -1,0 +1,147 @@
+  <!DOCTYPE html>
+  <html data-theme="light" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="PHero.html">
+    <title>Document</title>
+  </head>
+  <body class="md:mx-[100px] lg:mx-[120px] mt-3">
+    <header>
+        <!-- NAV Bar -->
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <img class="btn btn-ghost normal-case text-xl" src="logo/Logo.png"></a>
+            </div>
+            <div>
+                <button class="bg-gray-300 w-[148px] h-[48px]">Sort by view</button>
+            </div>
+            <div class="navbar-end">
+              <a href="blog.html" class="btn bg-red-600 text-white">Blog</a>
+            </div>
+          </div>
+           <!-- Tab Area -->
+           <hr class="text-black mt-3">
+           <div id="tab-container" class="tabs tabs-boxed text-center mt-10">
+            <!-- <a class="tab hover:bg-red-600 hover:text-white">Tab 1</a> 
+            <a class="tab">Tab 2</a> 
+            <a class="tab">Tab 3</a> -->
+          </div>
+    </header>
+    <main>
+        <!-- 01 -->
+        <section>
+            <h1 class="text-left ml-14 text-5xl font-semibold mt-5"> 01: Discuss the scope of var, let, and const</h1>
+            <p class="text-left mt-10 text-xl">
+                <span class="text-2xl font-semibold ml-20">Var :</span>
+                <ul class="text-xl ml-20">
+                    <li>* Variables declared with var have function-level scope or global scope, regardless of where they are declared.</li>
+                    <li>* They are "hoisted," meaning the variable declaration is moved to the top of the function or global context during compilation.</li>
+                    <li>* This can lead to unexpected behavior and difficulty in tracking variable scope, as variables can be accessed before they are declared.</li>
+                </ul>
+            </p>
+                <span class="text-xl font-semibold ml-20">Example:</span> <br>
+                <p class="ml-20 mt-3">
+                    function example() { <br>
+                        if (true) { <br>
+                          var x = 10; <br>
+                        } <br>
+                        console.log(x); // Output: 10 <br>
+                      } <br>
+                </p>
+
+                <!-- Let -->
+                <p class="text-left mt-10 text-xl">
+                    <span class="text-2xl font-semibold ml-20">Let :</span>
+                    <ul class="text-xl ml-20">
+                        <li>* Variables declared with let have block-level scope.</li>
+                        <li>* They are not hoisted to the top of the block, so you can't access them before the declaration.</li>
+                        <li>* This improves code readability and predictability by confining variable scope to the block in which they are defined.</li>
+                    </ul>
+                </p>
+                    <span class="text-xl font-semibold ml-20">Example:</span> <br>
+                    <p class="ml-20 mt-3">
+                        function example() { <br>
+                            if (true) { <br>
+                                let y = 20; <br>
+                            } <br>
+                            console.log(y); // Error: y is not defined <br>
+                          } <br>
+                    </p>
+                    <!-- Const -->
+                    <p class="text-left mt-10 text-xl">
+                        <span class="text-2xl font-semibold ml-20">const :</span>
+                        <ul class="text-xl ml-20">
+                            <li>* Variables declared with const also have block-level scope like let.</li>
+                            <li>* However, const variables are read-only and cannot be reassigned after their initial assignment.</li>
+                            <li>* They are particularly useful for declaring constants or values that shouldn't be changed.</li>
+                        </ul>
+                    </p>
+                        <span class="text-xl font-semibold ml-20">Example:</span> <br>
+                        <p class="ml-20 mt-3">
+                            const PI = 3.14159; <br>
+                            PI = 4; // Error: Assignment to constant variable <br>
+                        </p>
+        </section>
+        <!-- 02 -->
+        <section>
+            <!-- Null -->
+            <h1 class="text-left ml-14 text-5xl font-semibold mt-5"> 02: Certainly! Here are the primary use cases of null and undefined in JavaScript:</h1>
+            <p class="text-left mt-10 text-xl">
+                <span class="text-2xl font-semibold ml-20">null :</span>
+                <ul class="text-xl ml-20">
+                    <li>* null represents the intentional absence of any object value or value that is deliberately non-existent.</li>
+                    <li>* It's often used to indicate that a variable intentionally has no value or that a value should be cleared.</li>
+                    <li>* Use cases:
+                        01,Initializing a variable that will later hold an object or value.
+                        02,Explicitly indicating the absence of a value, such as when data is missing.
+                        03,Clearing the value of a variable or property.
+                    </li>
+                </ul>
+            </p>
+                <span class="text-xl font-semibold ml-20">Example:</span> <br>
+                <p class="ml-20 mt-3">
+                    let user = null; // No user object assigned initially<br>
+                        
+                </p>
+                <!-- undefined -->
+                <p class="text-left mt-10 text-xl">
+                    <span class="text-2xl font-semibold ml-20">undefined :</span>
+                    <ul class="text-xl ml-20">
+                        <li>* undefined is a default value assigned to variables that have been declared but have not been assigned any value yet.</li>
+                        <li>* It's the value a variable has if it hasn't been initialized.</li>
+                        <li>* Use cases:
+                            01, Variables that are declared but not assigned a value will have the value undefined.
+                            02, Function parameters that are not provided when calling the function.
+                            03, Properties that have not been assigned a value in an object.
+                        </li>
+                    </ul>
+                </p>
+                    <span class="text-xl font-semibold ml-20">Example:</span> <br>
+                    <p class="ml-20 mt-3">
+                        let name; // Value is undefined until assigned<br>
+                        function greet(person) {<br>
+                            console.log(`Hello, ${person}!`); // person is undefined if not provided<br>
+                        }<br>
+                            
+                    </p>
+        </section>
+        <!-- 03 -->
+        <section>
+            <h1 class="text-left ml-14 text-5xl font-semibold mt-5"> 03: REST API</h1>
+            <p class="text-left mt-10 text-xl">
+                <p class="text-2xl font-semibold ml-20">REST API stands for "Representational State Transfer Application Programming Interface." It is a design pattern used in web development to create APIs (Application Programming Interfaces) that follow certain principles for interacting with resources (data) over the web. RESTful APIs use HTTP methods and follow a stateless client-server architecture. They are characterized by the following in short:</p>
+                <ul class="text-xl ml-20 mt-4 ">
+                    <li class="mt-3"><span class="text-2xl font-semibold">* HTTP Methods:</span> REST APIs use standard HTTP methods like GET, POST, PUT, and DELETE to perform operations on resources. Each method corresponds to a specific action: retrieving, creating, updating, or deleting resources.</li>
+                    <li class="mt-3"> <span class="text-2xl font-semibold">* Statelessness:</span> Each client request to a REST API should contain all the information needed for the server to fulfill the request. The server doesn't store information about the client's state between requests.</li>
+                    <li class="mt-3"> <span class="text-2xl font-semibold">* Resources:</span> REST APIs expose resources, which are typically identified by URLs. These resources represent data entities, such as users, posts, products, etc.</li>
+                </ul>
+            </p>
+                <p class="text-xl font-semibold ml-20 mt-8 mb-10">In essence, REST API is a way to structure and interact with data resources over the web using standard HTTP methods and principles, making it a widely used approach for building web services.</p> 
+        </section>
+    </main>
+    <script src="JS/index.js"></script>
+  </body>
+  </html>
