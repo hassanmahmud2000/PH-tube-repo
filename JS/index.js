@@ -24,8 +24,8 @@ const cardHeandle = async (id) => {
     const res = await fetch (`https://openapi.programming-hero.com/api/videos/category/${id}`)
     const data = await res.json ();
     // console.log(data.data);
-    data?.data.forEach( (card,index,array) => {
-        console.log(card);
+    data?.data.forEach( (card) => {
+        // console.log(card);
         const cardContainer = document.getElementById ('card-container')
         const div = document.createElement ('div');
         div.classList = `card w-72 max-h-[350px] bg-base-100 shadow-lg  ml-3`
@@ -60,7 +60,6 @@ const cardHeandle = async (id) => {
                 blankPage.innerHTML ='';
 
         cardContainer.appendChild (div)
-        sortingHeandle (id)
 
         
     })
@@ -74,18 +73,16 @@ const cardHeandle = async (id) => {
         blankPage.innerHTML = '';
     }
 
+    sortingData (id)
+
 }
 
 // Sorting
-const sortingHeandle = async (categoryId) => {
-    const res = await fetch (`https://openapi.programming-hero.com/api/videos/category/ ${id}`);
+const sortingData =async(id) => {
+    const res = await fetch (`https://openapi.programming-hero.com/api/videos/category/ ${id}`)
     const data = await res.json ();
-    console.log(data.data);
-
-    data.data.others.views.forEach (viewsNumber => {
-        array.push (viewsNumber);
-        console.log(array);
-    }) 
+    const viewsData = data.data.others
+    console.log(viewsData);
 
 }
 heandleCatagory ();
